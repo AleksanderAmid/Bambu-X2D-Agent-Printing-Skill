@@ -1,0 +1,4 @@
+interface:
+  display_name: "Bambu Lab X2D 3D Printing"
+  short_description: "Model, measure, slice, and review X2D print jobs"
+  default_prompt: "Use $bambu-x2d-printing to create or edit my model and verify it for the X2D."
