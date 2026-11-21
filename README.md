@@ -31,6 +31,8 @@ On a new workstation, install the desktop apps, Git, uv, Python 3.12, Node.js 24
 .\tools\install-mcps.ps1
 ```
 
+For single-image 3D estimates, install the optional headless TRELLIS.2 backend from the same checkout. Its terminal command and stdio MCP server run the model locally on a Windows x64 Vulkan GPU. The output opens in Blender, with a sized STL available for Bambu Studio. [Install and use TRELLIS.2](skills/bambu-x2d-printing/references/trellis2.md)
+
 From the repository root, copy the skill into your Codex skills directory. The commands install one user-level copy and stop if it already exists.
 
 ```powershell
@@ -47,6 +49,8 @@ Open a fresh Codex session. Invoke `$bambu-x2d-printing` or ask for an X2D model
 > Use $bambu-x2d-printing to model a 38 × 22 × 4 mm mounting tab with two 4 mm through-holes on 24 mm centers. Save the editable FreeCAD file, measure the exported STL, and prepare a preview for an X2D with 0.4 mm nozzles, PLA Basic and textured PEI.
 >
 > Use $bambu-x2d-printing to widen only the center hole in this washer STL to 9.6 mm. Preserve its outer profile and thickness. Give me an editable Blender file and a revised STL.
+>
+> Use TRELLIS.2 to turn this single photo into a rough 3D bust. Keep the reference mesh for Blender and give me a 100 mm version I can preview in Bambu Studio.
 
 ## What's included
 

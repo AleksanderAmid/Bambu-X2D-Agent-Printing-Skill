@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "x2d-trellis"
+version = "0.1.0"
+description = "Local TRELLIS.2 reference meshes for the Bambu X2D workshop"
+requires-python = ">=3.11"
+dependencies = [
+    "fast-simplification>=0.1.12,<0.3",
+    "filelock>=3.13,<4",
+    "mcp==1.30.0",
+    "numpy>=1.26,<3",
+    "pillow>=11,<14",
+    "point-cloud-utils==0.34.0",
+    "psutil>=6,<8",
+    "scipy>=1.12,<2",
+    "trimesh>=4.6,<6",
+]
+
+[project.scripts]
+x2d-trellis = "x2d_trellis.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["x2d_trellis"]

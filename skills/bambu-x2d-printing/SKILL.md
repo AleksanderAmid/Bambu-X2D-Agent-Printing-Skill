@@ -1,6 +1,6 @@
 ---
 name: bambu-x2d-printing
-description: Create, edit, customize, measure, repair, or slice 3D models for the Bambu Lab X2D using FreeCAD, Blender and Bambu Studio MCP on Windows. Use for drawings, scans, fitted parts, mesh edits, multi-plate projects, and human-approved print handoff.
+description: Create, edit, measure, repair, or slice models for the Bambu Lab X2D using FreeCAD, Blender and Bambu Studio MCP on Windows. Use local TRELLIS.2 for requested single-image 3D estimates. Covers drawings, scans, fitted parts, mesh edits, multi-plate projects, and human-approved print handoff.
 license: MIT
 ---
 
@@ -14,7 +14,8 @@ Complete the requested stage. A model request can end with an editable model. A 
 |---|---|---|
 | Dimensions, drawing, STEP, FCStd, mating parts | Identify datums and functional features. Inspect existing bodies, placements and links before making an edit. | [Solid modeling and fit](references/solid-modeling.md) |
 | Sculpt, decorative form, BLEND, STL, OBJ, GLB, scan | Inspect units, evaluated geometry, transforms and collection membership. Record a scale reference. | [Meshes and reference images](references/mesh-modeling.md) |
-| Photo or concept | Separate visible form from unseen interfaces. For a fit, obtain a real reference measurement. | [Meshes and reference images](references/mesh-modeling.md) |
+| Generate a rough 3D model from one image | Use local TRELLIS.2 on request. Inspect its inferred sides and back in Blender. Supply a height when a sized STL is wanted. | [Image to mesh with TRELLIS.2](references/trellis2.md) |
+| Photo or concept as a modeling reference | Separate visible form from unseen interfaces. For a fit, obtain a real reference measurement. | [Meshes and reference images](references/mesh-modeling.md) |
 | 3MF, a sliced plate, recoloring, support change | Inventory plates, instances, modifiers and materials. Identify available model geometry and existing toolpaths. | [Slicing and project editing](references/slicing.md) |
 | Ready-to-print request | Inspect the exact selected artifact, target and setup. Show the job for review. | [Windows print handoff](references/handoff.md) |
 

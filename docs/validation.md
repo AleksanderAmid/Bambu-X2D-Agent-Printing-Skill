@@ -16,6 +16,20 @@ The same run checked a 3MF with repeated instances and an inch-declared root uni
 
 The two-color trial assembled blue and yellow parts in a common coordinate system, extracted them to verify their Z placement and slots, and sliced the assembly using two PLA Basic profiles. Studio attributed the first ten layers to the blue part and the final ten to yellow. Both used material on the object. Connector 1.1.98 rejected the saved file at Studio's multi-extruder pre-cooling command. The qualification checks the reported line against the exact artifact and expects the refusal. This plate remains pending inspection. [Color-workflow guidance](../skills/bambu-x2d-printing/references/slicing.md)
 
+## Optional local image-to-mesh backend
+
+On Windows 11 with a Radeon 8060S, the Vulkan backend reconstructed a 189 × 231 px opaque-background bust image using TRELLIS.2, resolution 512 and seed 42. The initial raw geometry-only export contained 3,448,292 triangles and 139,362 open edges. The published worker uses the engine’s cleaned surface and simplifies it to an editable reference. The MCP generation took about 4 min 21 s and returned 150,000 triangles. Its scaled STL had zero open edges and 4,468 edges shared by more than two faces.
+
+A separate CPU wrap took about 22 s. The reopened STL measured 86.5127 × 86.0887 × 100.0000 mm at the chosen preview height. It had one body, consistent winding, and zero open edges, overused edges or zero-area faces. Blender 5.3 reopened the editable scene at those dimensions and Bambu Studio imported all 150,000 triangles. The single-view rear geometry is inferred. This test covers a digital model and an unsliced import. The optional 1024 run was stopped during detail inference and has no verified export in this qualification.
+
+The stdio test checks tool discovery, generation, job polling and retrieval from a fresh connection. With the backend installed, run the commands below from the repository root. Choose new output directories. [Install and use TRELLIS.2](../skills/bambu-x2d-printing/references/trellis2.md)
+
+```powershell
+$python = Join-Path (uv tool dir) 'x2d-trellis/Scripts/python.exe'
+& $python tests/trellis2_checks.py -v
+& $python tests/live_trellis2.py '.\bust.png' '.\draft' --wrap-dir '.\watertight'
+```
+
 ## Independent agent trials
 
 | Brief | Observable result |
