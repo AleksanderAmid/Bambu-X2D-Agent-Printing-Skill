@@ -14,7 +14,7 @@ Install Git for Windows, uv, Python 3.12, Node.js 24 with npm, and the Codex CLI
 
 ### 2. Build the three MCP servers
 
-Run the following from the skill repository root. Keep using the same `$mcpRoot` in later commands. Pick another directory with `-InstallRoot` if desired. The [Windows installer](https://github.com/AleksanderAmid/bambu-x2d-printing/blob/main/tools/install-mcps.ps1) fetches each pinned upstream commit, runs `uv sync --locked --no-dev --python 3.12 --no-editable` for both Python servers, and runs `npm.cmd ci --include=dev` and `npm.cmd run build` for the Studio connector. It verifies all three entry points. A repeat run reuses matching clean checkouts. A different revision or local edits require a separate root.
+Run the following from the skill repository root. Keep using the same `$mcpRoot` in later commands. Pick another directory with `-InstallRoot` if desired. The [Windows installer](https://github.com/AleksanderAmid/Bambu-X2D-Agent-Printing-Skill/blob/main/tools/install-mcps.ps1) fetches each pinned upstream commit, runs `uv sync --locked --no-dev --python 3.12 --no-editable` for both Python servers, and runs `npm.cmd ci --include=dev` and `npm.cmd run build` for the Studio connector. It verifies all three entry points. A repeat run reuses matching clean checkouts. A different revision or local edits require a separate root.
 
 ```powershell
 $mcpRoot = Join-Path $env:LOCALAPPDATA 'Bambu-X2D-MCP'
@@ -60,7 +60,7 @@ codex mcp add bambu-studio --env BAMBU_MODEL=x2d --env SLICER_TYPE=bambustudio -
 
 If you set an authentication token in the FreeCAD workbench, provide that same `FREECAD_MCP_TOKEN` privately to the server process. For example, set it in the environment that launches Codex and add `env_vars = ["FREECAD_MCP_TOKEN"]` to the existing `[mcp_servers.freecad]` section in your user Codex config. The offline Studio configuration above works without a printer address, serial number or LAN access code.
 
-Copy the skill as shown in the [repository README](https://github.com/AleksanderAmid/bambu-x2d-printing#install-in-codex-on-windows), open a fresh Codex session and run `/mcp`. From the checkout, run both commands below using the Python environment just built. The first compares the installed interfaces with the release baseline. The second tests actual modeling and offline slicing. Save open work, keep FreeCAD open, and use Blender Object Mode for that check. The [verification report](https://github.com/AleksanderAmid/bambu-x2d-printing/blob/main/docs/validation.md) lists the expected results and the known two-color rejection.
+Copy the skill as shown in the [repository README](https://github.com/AleksanderAmid/Bambu-X2D-Agent-Printing-Skill#install-in-codex-on-windows), open a fresh Codex session and run `/mcp`. From the checkout, run both commands below using the Python environment just built. The first compares the installed interfaces with the release baseline. The second tests actual modeling and offline slicing. Save open work, keep FreeCAD open, and use Blender Object Mode for that check. The [verification report](https://github.com/AleksanderAmid/Bambu-X2D-Agent-Printing-Skill/blob/main/docs/validation.md) lists the expected results and the known two-color rejection.
 
 ```powershell
 & (Join-Path $mcpRoot 'freecad-mcp\.venv\Scripts\python.exe') -B tools/catalog.py

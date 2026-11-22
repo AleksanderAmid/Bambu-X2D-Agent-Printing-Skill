@@ -1,4 +1,4 @@
-# Bambu X2D Printing Skill
+# Bambu-X2D-Agent-Printing-Skill
 
 A Windows skill for turning a brief, drawing, CAD file, mesh or Bambu Studio project into an editable model and a measured X2D plate. It uses FreeCAD for precise features, Blender for mesh and surface edits, and the installed Bambu Studio slicer for toolpaths. Use it for a design-only change, an offline slice, or a human-approved print handoff.
 
@@ -17,8 +17,8 @@ For single-image 3D estimates, install the optional headless TRELLIS.2 backend f
 Clone this repository from PowerShell.
 
 ```powershell
-git clone https://github.com/AleksanderAmid/bambu-x2d-printing.git
-Set-Location bambu-x2d-printing
+git clone https://github.com/AleksanderAmid/Bambu-X2D-Agent-Printing-Skill.git
+Set-Location Bambu-X2D-Agent-Printing-Skill
 ```
 
 The skill uses three local Model Context Protocol (MCP) servers. The Windows installer fetches the exact revisions used in the test report and builds their locked dependencies. Each server keeps its upstream license.
