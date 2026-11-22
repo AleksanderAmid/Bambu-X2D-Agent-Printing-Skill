@@ -8,6 +8,10 @@ A Windows skill for turning a brief, drawing, CAD file, mesh or Bambu Studio pro
 
 The mounting tab shown above was created in an independent agent trial. Its native model and exported mesh measured 38 × 22 × 4 mm. Both 4 mm bores survived slicing, with centers 24 mm apart.
 
+## TRELLIS.2 now turns a single photo into a 3D mesh
+
+For single-image 3D estimates, install the optional headless TRELLIS.2 backend from the same checkout. Its terminal command and stdio MCP server run the model locally on a Windows x64 Vulkan GPU. The output opens in Blender, with a sized STL available for Bambu Studio. [Install and use TRELLIS.2](skills/bambu-x2d-printing/references/trellis2.md)
+
 ## Install in Codex on Windows
 
 Clone this repository from PowerShell.
@@ -30,8 +34,6 @@ On a new workstation, install the desktop apps, Git, uv, Python 3.12, Node.js 24
 ```powershell
 .\tools\install-mcps.ps1
 ```
-
-For single-image 3D estimates, install the optional headless TRELLIS.2 backend from the same checkout. Its terminal command and stdio MCP server run the model locally on a Windows x64 Vulkan GPU. The output opens in Blender, with a sized STL available for Bambu Studio. [Install and use TRELLIS.2](skills/bambu-x2d-printing/references/trellis2.md)
 
 From the repository root, copy the skill into your Codex skills directory. The commands install one user-level copy and stop if it already exists.
 
